@@ -1,0 +1,462 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  overflow: hidden;
+  cursor: pointer;
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.background-container:hover {
+  transform: scale(1.02);
+}
+
+.background-container::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.background-container:hover::after {
+  opacity: 1;
+}
+
+/* Header is displayed below the background image; keep header styling here */
+header {
+  text-align: center;
+  padding: 24px 16px;
+  background: transparent;
+  color: #222;
+  position: relative;
+  margin: 16px auto;
+  width: 100%;
+  z-index: 2;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.1;
+  color: #222;
+}
+
+header p {
+  margin: 6px 0 0 0;
+  color: #444;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+header p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.content-wrapper {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px 0;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.post {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.post img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.post img:hover {
+  transform: scale(1.05);
+}
+
+/* Modal styles */
+#image-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(5px);
+}
+
+.modal-image {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90vh;
+  margin-top: 2%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.modal-caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  font-size: 1.1em;
+}
+
+.modal-close {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.modal-close:hover {
+  color: #bbb;
+}
+
+.image-caption {
+  font-size: 1.1em;
+  color: #333;
+  line-height: 1.5;
+  margin: 15px 0;
+  font-weight: 500;
+}
+
+.post .image-caption {
+  font-size: 0.9em;
+  color: #333;
+  margin: 10px 0;
+}
+
+.read-more {
+  display: inline-block;
+  background: #004080;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.read-more:hover {
+  background: #003366;
+}
+
+.social-embed {
+  text-align: center;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.instagram-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.instagram-handle {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.social-button {
+  display: inline-block;
+  background: #E1306C;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.social-button:hover {
+  background: #C13584;
+}
+
+header {
+  text-align: center;
+  padding: 24px 16px;
+  background: transparent;
+  color: #222;
+  position: relative;
+  margin: 16px auto;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Make the page title look neat and separated from the background */
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.1;
+  color: #222;
+}
+
+header p {
+  margin: 6px 0 0 0;
+  color: #444;
+  font-size: 1rem;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+.video-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+}
+/* indicate clickable zoomable images */
+.zoomable { cursor: zoom-in; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.post {
+  margin: 0;
+  text-align: left;
+  background: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.post img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.06);
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .post img { height: 160px; }
+}
+
+@media (max-width: 420px) {
+  .gallery { grid-template-columns: 1fr; }
+  .post img { height: 140px; }
+}
+
+/* Caption styling for gallery images */
+.image-caption {
+  margin-top: 10px;
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* Modal styles for caption */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.modal-content {
+  background: #fff;
+  max-width: 760px;
+  width: 90%;
+  padding: 20px 24px;
+  border-radius: 8px;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.modal-body { color: #222; line-height: 1.6; }
+
+/* read-more link */
+.read-more { color: #004080; text-decoration: none; font-weight: 600; }
+.read-more:hover { text-decoration: underline; }
+
+/* Make read-more look like a small button */
+.post .read-more{
+  display: inline-block;
+  padding: 8px 12px;
+  background: #004080;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.post .read-more:hover{ background: #003366; }
+
+footer {
+  background: #004080;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+h2 {
+  color: #222;
+}
+
+/* Center and style the UI/UX + Startup section heading */
+#uiux h2 {
+  text-align: center;
+  margin: 8px auto 24px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Center and make video responsive */
+#video {
+  text-align: center;
+}
+#video video {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 640px; /* default width used in HTML */
+  height: auto;
+}
+
+@media (max-width: 700px) {
+  #video video { width: 100%; }
+}
+
+/* UI caption / microcopy styles (added for consistent UX / Startup captions) */
+.ui-caption {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.4;
+  color: #6b7280; /* neutral secondary text */
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.ui-caption--muted {
+  color: #9ca3af;
+  font-size: 0.8125rem; /* 13px */
+}
+
+.ui-caption--status {
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
+
+.ui-caption--success { color: #10b981; }
+.ui-caption--error { color: #ef4444; }
+
+/* small badge-like microcopy */
+.ui-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.05);
+  font-size: 0.75rem;
+  color: #374151;
+}

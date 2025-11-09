@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Interaksi Kampus STIE & STMIK Jayakarta 2025</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-container" onclick="openImageModal(this)">
+    <img src="images/background.jpg" alt="Background Wisuda" class="background-image" style="display:none;">
+  </div>
+  <header>
+    <h1>Sistem Interaksi Kampus STIE &amp; STMIK Jayakarta 2025</h1>
+    <p>Selamat datang di portal interaktif kampus STIE &amp; STMIK Jayakarta</p>
+  </header>
+
+  <div class="content-wrapper">
+    <section id="video">
+      <div class="video-container">
+        <h2>🎓 Video Ucapan Selamat Wisuda</h2>
+        <video controls>
+          <source src="video/wisuda2025.mp4" type="video/mp4">
+          Browser kamu tidak mendukung video tag.
+        </video>
+      </div>
+    </section>
+
+  <section id="uiux">
+    <h2>💡 Postingan UI/UX & Startup</h2>
+    <div class="gallery">
+      <div class="post">
+        <img src="images/ui-gojek.jpg" alt="Gojek UI" loading="lazy" class="zoomable" onclick="openImageModal(this)">
+        <p class="image-caption">Gambar UI (User Interface) – Tampilan Aplikasi Gojek
+
+        <br>Gambar ini menunjukkan desain antarmuka (User Interface) dari aplikasi Gojek. Desainnya menampilkan berbagai fitur utama seperti GoRide, GoCar, GoFood, dan GoSend dalam satu tampilan yang rapi, berwarna hijau khas Gojek, dan mudah dipahami oleh pengguna. Elemen UI seperti ikon, tombol, dan tata letak dirancang dengan prinsip kesederhanaan dan konsistensi, sehingga mempermudah pengguna dalam bernavigasi.</p>
+        <div style="margin-top:auto">
+          <a href="#" class="read-more">Baca selengkapnya</a>
+        </div>
+        <div class="full-caption" style="display:none;">
+          <p>Gambar UI (User Interface) – Tampilan Aplikasi Gojek</p>
+          <p>Gambar ini menunjukkan desain antarmuka (User Interface) dari aplikasi Gojek. Desainnya menampilkan berbagai fitur utama seperti GoRide, GoCar, GoFood, dan GoSend dalam satu tampilan yang rapi, berwarna hijau khas Gojek, dan mudah dipahami oleh pengguna.</p>
+          <p>Elemen UI seperti ikon, tombol, dan tata letak dirancang dengan prinsip kesederhanaan dan konsistensi, sehingga mempermudah pengguna dalam bernavigasi.</p>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="images/ui-gojek-ux.jpg" alt="Gojek UX" loading="lazy" class="zoomable" onclick="openImageModal(this)">
+        <p class="image-caption">Gambar UX (User Experience) – Pengalaman Pengguna Gojek</p>
+        <div style="margin-top:auto">
+          <a href="#" class="read-more">Baca selengkapnya</a>
+        </div>
+        <div class="full-caption" style="display:none;">
+          <p>Gambar kedua memperlihatkan alur pengalaman pengguna saat memilih layanan transportasi di aplikasi Gojek.</p>
+          <p>Mulai dari pemilihan jenis kendaraan (GoCar, GoRide, GoBluebird) hingga estimasi biaya dan waktu tiba, semuanya dirancang agar proses pemesanan terasa cepat, nyaman, dan efisien.</p>
+          <p>Dalam konteks UX, Gojek berhasil menciptakan pengalaman yang intuitif — pengguna tidak perlu berpikir rumit untuk mencapai tujuannya.</p>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="images/ui-gojek-startup.jpg" alt="Gojek Startup" loading="lazy" class="zoomable" onclick="openImageModal(this)">
+        <p class="image-caption">Gambar Startup – Ide Gagasan Bisnis Gojek</p>
+        <div style="margin-top:auto">
+          <a href="#" class="read-more">Baca selengkapnya</a>
+        </div>
+        <div class="full-caption" style="display:none;">
+          <p>Gambar ketiga menggambarkan ide startup Gojek sebagai Super App serbaguna yang menyatukan berbagai layanan dalam satu platform digital.</p>
+          <p>Dari awalnya sebagai aplikasi transportasi online, Gojek berkembang menjadi ekosistem digital yang melayani kebutuhan sehari-hari masyarakat — mulai dari pengantaran makanan, pembayaran digital, hingga logistik.</p>
+          <p>� Makna startup Gojek: Inovasi yang lahir dari kebutuhan lokal, memanfaatkan teknologi untuk memberdayakan masyarakat dan pelaku UMKM di Indonesia.</p>
+          <p>💬 “Satu aplikasi, berjuta solusi.” – filosofi yang menggambarkan kekuatan ide bisnis startup Gojek.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section id="sosmed">
+    <h2>📱 Terhubung dengan Sosial Media Kami</h2>
+    <p>Ikuti kami di Instagram & Facebook:</p>
+    <div class="social-embed">
+      <a href="https://www.instagram.com/masebonafasius?igsh=MXdsbGt5ajZnMDVhdA==" target="_blank" rel="noopener noreferrer" class="instagram-link">
+        <img src="images/instagram-icon.png" alt="Instagram" class="social-icon" onerror="this.style.display='none'">
+        <span class="instagram-handle">@masebonafasius</span>
+      </a>
+      <p>
+        <a href="https://www.instagram.com/masebonafasius?igsh=MXdsbGt5ajZnMDVhdA==" target="_blank" rel="noopener noreferrer" class="social-button">
+          Buka di Instagram
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Modal for image preview -->
+  <div id="image-modal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-image" id="modal-img">
+    <div class="modal-caption"></div>
+  </div>
+
+  <!-- Modal for full caption -->
+  <div id="caption-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <button id="close-caption-btn" class="modal-close">×</button>
+      <h3>Deskripsi Lengkap</h3>
+      <div class="modal-body">
+        <p>Tampilan ini menunjukkan desain antarmuka pengguna (UI) dari website fashion bernama StyleHub. Desain dibuat dengan gaya modern minimalis, menggunakan warna putih bersih dan aksen biru gelap untuk menciptakan kesan elegan dan profesional.</p>
+        <p>Elemen utama seperti tombol “Shop Now”, foto model, serta kategori produk (“Women”, “Men”, “Accessories”) diatur dengan tata letak grid yang seimbang agar navigasi mudah dan visual tetap menarik.</p>
+        <p>Fokus utama UI adalah keindahan tampilan dan kejelasan informasi — sehingga pengguna tertarik berinteraksi sejak pertama kali membuka halaman.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Kampus STIE & STMIK Jayakarta | Sistem Interaksi Digital</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
